@@ -62,7 +62,7 @@ class segTree{//point type
                     //pDC=0;
                     int mid=(pL+pR)/2;
                     if(pL!=pR){
-                        down(LCHILD,pL,mid,0,pSet);//dC包括的内容下沉
+                        down(LCHILD,pL,mid,0,pSet);//内容下沉
                         down(RCHILD,mid+1,pR,0,pSet);
                     }
                     pSet=NoVal;
@@ -173,6 +173,7 @@ void solve(){
             tr.down(ROOT,l,r,0,d);
         }else{
             auto res=tr.Query(ROOT,l,r);
+            //printf("%lld %lld %lld\n",res.sum,res.max,res.min)
             cout<<res.sum<<' '<<res.max<<' '<<res.min<<'\n';
         }
         #ifdef LOCAL
